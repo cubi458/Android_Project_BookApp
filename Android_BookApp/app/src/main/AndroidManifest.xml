@@ -40,6 +40,14 @@
         <activity android:name=".user.login.Activate" android:exported="false" />
         <activity android:name=".user.login.ForgotPassword" android:exported="false" />
         <activity android:name=".user.login.Login" android:exported="false" />
+        <activity android:name=".user.login.RoleBasedHomeActivity" android:exported="false" />
+        <activity android:name=".user.login.SplashActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".admin.Home" android:exported="false" />
         <activity android:name=".user.cart_user.activity.MainActivity" android:exported="false" />
         <activity android:name=".user.cart_user.activity.ReviewYourOrder" android:exported="false" />
         <activity android:name=".user.cart_user.activity.MyCart" android:exported="false" />
@@ -49,12 +57,7 @@
         <activity android:name=".user.cart_user.activity.DiscountsActivity" android:exported="false" />
         <activity android:name=".user.bill.activity.MyBill" android:exported="false" />
         <activity android:name=".user.bill.activity.MyBillDetai" android:exported="false" />
-        <activity android:name=".user.home.activity.HomeActivity" android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".user.home.activity.HomeActivity" android:exported="false" />
         <activity android:name=".user.home.activity.SearchActivity" android:exported="false" />
         <activity android:name=".user.home.activity.FantasyActivity" android:exported="false" />
         <activity android:name=".user.home.activity.LibraryActivity" android:exported="false" />
