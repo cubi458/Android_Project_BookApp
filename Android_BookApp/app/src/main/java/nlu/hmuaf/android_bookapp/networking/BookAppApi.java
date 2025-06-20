@@ -76,6 +76,9 @@ public interface BookAppApi {
             @Query("size") int size
     );
 
+    @GET("api/books/admin/all-books")
+    Call<List<ListBookResponseDTO>> getAllBooksForAdmin();
+
     @GET("api/v1/key/get/google-map")
     Call<APIKeyResponse> getGoogleMapAPIKey();
 

@@ -253,4 +253,9 @@ public class BookServiceImpl implements IBookService {
 
     return pageBookResponseDTO;
   }
+
+  @Override
+  public List<ListBookResponseDTO> getAllBooksForAdmin() {
+    return bookRepository.getAllBooksForAdmin();
+  }
 }

@@ -3,6 +3,7 @@ package nlu.hmuaf.android_bookapp.admin;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -14,11 +15,14 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import nlu.hmuaf.android_bookapp.admin.manage_inventory.AddBookActivity;
 import nlu.hmuaf.android_bookapp.admin.manage_inventory.ManageInventoryActivity;
+import nlu.hmuaf.android_bookapp.admin.manage_inventory.ManageInventorDetailActivity;
 import nlu.hmuaf.android_bookapp.admin.order.activity.OrderList;
 import nlu.hmuaf.android_bookapp.R;
 import nlu.hmuaf.android_bookapp.dto.response.TokenResponseDTO;
 import nlu.hmuaf.android_bookapp.user.login.Login;
 import nlu.hmuaf.android_bookapp.utils.MyUtils;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Home extends AppCompatActivity {
     private DrawerLayout drawerLayout;
@@ -26,6 +30,7 @@ public class Home extends AppCompatActivity {
     private TextView navSalesManagement , listOrderSubMenu, listAddOrderSubMenu, listInStockSubMenu, listProductSubMenu,
             listAddProductSubMenu, listUserSubMenu, listAddUserSubMenu, adminWelcomeText, logoutText;
     private ImageView navOrderManagement,navProductManagement,navUserManagement;
+    private Button logoutButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +65,8 @@ public class Home extends AppCompatActivity {
         }
         
         // Xử lý đăng xuất - thay đổi TextView thành clickable
-        logoutText.setOnClickListener(new View.OnClickListener() {
+        logoutButton = findViewById(R.id.logout_button);
+        logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 MyUtils.deleteTokenResponse(Home.this);
@@ -126,8 +132,9 @@ public class Home extends AppCompatActivity {
         listProductSubMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(@NonNull View view) {
-//                Intent intent = new Intent(AdminHome.this, ManageOrder.class);
-//                startActivity(intent);
+                Intent intent = new Intent(Home.this, ManageInventorDetailActivity.class);
+                intent.putExtra("tabIndex", 0); // Hiển thị tất cả sản phẩm
+                startActivity(intent);
             }
         });
 

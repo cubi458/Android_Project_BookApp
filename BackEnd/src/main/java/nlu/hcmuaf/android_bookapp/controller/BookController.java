@@ -57,4 +57,9 @@ public class BookController {
     return ResponseEntity.ok(
         bookService.findBooks(title, bookType, coverType, publisher, pageRequest));
   }
+
+  @GetMapping("/admin/all-books")
+  public ResponseEntity<List<ListBookResponseDTO>> getAllBooksForAdmin() {
+    return ResponseEntity.ok(bookService.getAllBooksForAdmin());
+  }
 }

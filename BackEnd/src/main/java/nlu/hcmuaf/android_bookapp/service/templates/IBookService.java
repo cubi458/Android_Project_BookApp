@@ -17,4 +17,6 @@ public interface IBookService extends IDataInitializer {
 
   PageBookResponseDTO findBooks(String title, String bookKind, String coverType,
       String publisher, Pageable pageable);
+
+  List<ListBookResponseDTO> getAllBooksForAdmin();
 }
