@@ -172,8 +172,8 @@ public class Home extends AppCompatActivity {
         listUserSubMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(@NonNull View view) {
-//                Intent intent = new Intent(AdminHome.this, ManageOrder.class);
-//                startActivity(intent);
+                Intent intent = new Intent(Home.this, nlu.hmuaf.android_bookapp.admin.user.UserListActivity.class);
+                startActivity(intent);
             }
         });
 

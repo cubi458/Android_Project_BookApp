@@ -78,5 +78,7 @@
         <meta-data
                     android:name="com.google.android.geo.API_KEY"
                     android:value="" />
+        <!-- Khai báo màn hình danh sách người dùng cho admin -->
+        <activity android:name=".admin.user.UserListActivity" android:exported="false" />
     </application>
 </manifest>
