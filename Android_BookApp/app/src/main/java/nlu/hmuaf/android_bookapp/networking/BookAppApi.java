@@ -3,6 +3,7 @@ package nlu.hmuaf.android_bookapp.networking;
 import java.util.List;
 
 import nlu.hmuaf.android_bookapp.dto.json.response.PageListBookResponseJson;
+import nlu.hmuaf.android_bookapp.dto.request.AddBookRequestDTO;
 import nlu.hmuaf.android_bookapp.dto.request.AddressRequestDTO;
 import nlu.hmuaf.android_bookapp.dto.request.BillRequestDTO;
 import nlu.hmuaf.android_bookapp.dto.request.CartItemRequestDTO;
@@ -80,6 +81,9 @@ public interface BookAppApi {
 
     @GET("api/books/admin/all-books")
     Call<List<ListBookResponseDTO>> getAllBooksForAdmin();
+
+    @POST("api/books/admin/add-book")
+    Call<BookDetailResponseDTO> addBook(@Body AddBookRequestDTO addBookRequestDTO);
 
     @GET("api/v1/key/get/google-map")
     Call<APIKeyResponse> getGoogleMapAPIKey();

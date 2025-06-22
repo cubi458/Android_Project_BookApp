@@ -1,6 +1,7 @@
 package nlu.hcmuaf.android_bookapp.service.templates;
 
 import java.util.List;
+import nlu.hcmuaf.android_bookapp.dto.request.AddBookRequestDTO;
 import nlu.hcmuaf.android_bookapp.dto.response.BookDetailResponseDTO;
 import nlu.hcmuaf.android_bookapp.dto.response.ListBookResponseDTO;
 import nlu.hcmuaf.android_bookapp.dto.response.PageBookResponseDTO;
@@ -19,4 +20,6 @@ public interface IBookService extends IDataInitializer {
       String publisher, Pageable pageable);
 
   List<ListBookResponseDTO> getAllBooksForAdmin();
+  
+  BookDetailResponseDTO addBook(AddBookRequestDTO addBookRequestDTO);
 }

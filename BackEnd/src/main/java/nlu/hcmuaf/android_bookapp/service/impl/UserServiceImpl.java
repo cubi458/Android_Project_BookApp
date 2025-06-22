@@ -233,8 +233,15 @@ public class UserServiceImpl implements IUserService {
         cart.setUser(users);
         users.setCart(cart);
 
-        emailService.sendVerificationCode(requestDTO.getEmail(), otp);
+        // Lưu user trước
         userRepository.save(users);
+
+        // Gửi OTP, nếu lỗi chỉ log, không throw
+        try {
+          emailService.sendVerificationCode(requestDTO.getEmail(), otp);
+        } catch (Exception e) {
+          logger.error("Send OTP failed: " + e.getMessage());
+        }
 
         return MessageResponseDTO.builder()
             .message("Register success!")
@@ -259,7 +266,7 @@ public class UserServiceImpl implements IUserService {
       if (users.isPresent()) {
         if (users.get().getUserDetails().isVerified()) {
           return MessageResponseDTO.builder()
-              .message("User already verified")
+              .message("Verified successfully")
               .build();
         }
 
